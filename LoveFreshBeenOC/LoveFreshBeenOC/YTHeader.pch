@@ -1,0 +1,25 @@
+//
+//  YTHeader.pch
+//  LoveFreshBeenOC
+//
+//  Created by youyou on 16/3/16.
+//  Copyright © 2016年 youyou. All rights reserved.
+//
+
+#ifndef YTHeader_pch
+
+//#import "UIViewController+YTViewController.h"
+
+#define YTColor(a,b,c,d) [UIColor colorWithRed:a/255.0 green:b/255.0 blue:c/255.0 alpha:d]
+//#define Back UIBarButtonItem *back = [[UIBarButtonItem alloc]init];
+//back.title = @"返回";
+//self.navigationItem.backBarButtonItem = back;
+
+#define YTHeader_pch
+
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* YTHeader_pch */
