@@ -10,8 +10,15 @@
 #import "YTScanCodeViewController.h"
 #import "MySearchViewController.h"
 #import "ChangeAddressViewController.h"
+#import "YTAddressViewController.h"
 
-@interface MainViewController ()
+
+@interface MainViewController ()<YTAdressDelegate>
+//<>
+
+@property(nonatomic,strong)NSString *addressName;
+
+-(void)show;
 
 @end
 
@@ -20,6 +27,10 @@
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = NO;
+}
+
+-(void)show {
+    NSLog(@"testShow打印了");
 }
 
 - (void)viewDidLoad {
@@ -33,12 +44,19 @@
 
     
     UIImage *image = [[UIImage imageNamed:@"icon_black_scancode.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(scanCode:)];
-    self.navigationItem.leftBarButtonItem = backItem;
+    UIBarButtonItem *scanItem = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(scanCode:)];
+
     
     UIImage *search = [[UIImage imageNamed:@"icon_search.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIBarButtonItem *searchItem = [[UIBarButtonItem alloc]initWithImage:search style:UIBarButtonItemStylePlain target:self action:@selector(searchResults:)];
-    self.navigationItem.rightBarButtonItem = searchItem;
+    self.navigationItem.rightBarButtonItems = @[scanItem,searchItem];
+    
+    self.addressName = @"北京";
+    [self setValue:self.addressName forKey:@"addressName"];
+    
+    UIBarButtonItem *addressItem = [[UIBarButtonItem alloc]initWithTitle:self.addressName style:UIBarButtonItemStylePlain target:self action:@selector(chooseAddress:)];
+    self.navigationItem.leftBarButtonItem = addressItem;
+    
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(50,28,100,34);
@@ -49,7 +67,20 @@
     
     // Do any additional setup after loading the view.
 }
--(void)changeAddress:(UIButton *)btn {
+- (void)chooseAddress:(UIBarButtonItem *)addItem {
+    YTAddressViewController *address = [[YTAddressViewController alloc]init];
+    address.delegate = self;
+    [self presentViewController:address animated:YES completion:nil];
+    
+//    NSLog(@"")
+}
+-(void)select:(NSString *)addString {
+    self.addressName = self.title;
+    [self setValue:self.addressName forKey:@"addressName"];
+    NSLog(@"string:%@",addString);
+}
+
+- (void)changeAddress:(UIButton *)btn {
     ChangeAddressViewController *address = [[ChangeAddressViewController alloc]init];
     [self.navigationController pushViewController:address animated:YES];
     

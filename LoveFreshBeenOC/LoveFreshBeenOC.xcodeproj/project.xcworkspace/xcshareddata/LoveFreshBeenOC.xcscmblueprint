@@ -1,14 +1,18 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DD08535BD0D70941A1DC2E5A139D7F58F928E99C",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DD08535BD0D70941A1DC2E5A139D7F58F928E99C+++F22E160",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "DD08535BD0D70941A1DC2E5A139D7F58F928E99C" : 0
+    "DD08535BD0D70941A1DC2E5A139D7F58F928E99C+++2CB077C" : 0,
+    "DD08535BD0D70941A1DC2E5A139D7F58F928E99C+++F22E160" : 0,
+    "DD08535BD0D70941A1DC2E5A139D7F58F928E99C+++808F757" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AFE3FC98-5EB6-4896-AE73-6313B6EE7217",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "DD08535BD0D70941A1DC2E5A139D7F58F928E99C" : ""
+    "DD08535BD0D70941A1DC2E5A139D7F58F928E99C+++2CB077C" : "",
+    "DD08535BD0D70941A1DC2E5A139D7F58F928E99C+++F22E160" : "LoveFreshBeenOC\/",
+    "DD08535BD0D70941A1DC2E5A139D7F58F928E99C+++808F757" : ""
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "LoveFreshBeenOC",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -17,12 +21,17 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cattlelovegrass\/LoveFreshBeen.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DD08535BD0D70941A1DC2E5A139D7F58F928E99C"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DD08535BD0D70941A1DC2E5A139D7F58F928E99C+++2CB077C"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cattlelovegrass\/LoveFreshBeen.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DD08535BD0D70941A1DC2E5A139D7F58F928E99C"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DD08535BD0D70941A1DC2E5A139D7F58F928E99C+++808F757"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cattlelovegrass\/LoveFreshBeen.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DD08535BD0D70941A1DC2E5A139D7F58F928E99C+++F22E160"
     }
   ]
 }

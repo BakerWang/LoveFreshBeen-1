@@ -12,21 +12,32 @@
 #import "GouWuViewController.h"
 #import "MarketViewController.h"
 #import "YTNavigationController.h"
+#import "UIImageView+WebCache.h"
+
 
 @interface ViewController ()
+
+//@property(nonatomic,readonly)NSString *nameString;
+@property (nonatomic,strong) UIImageView *adImage;
+
 
 @end
 
 @implementation ViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-//    self.automaticallyAdjustsScrollViewInsets = NO;
-
     
+//    UIBarButtonItem *back = [[UIBarButtonItem alloc]init];
+//    back.title = @"返回";
+//    self.navigationItem.backBarButtonItem = back;
+
     [self initWithChildViewControllers];
     [self changeTabBarApprance];
+
+    
     
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -61,7 +72,8 @@
 - (void)addChildViewController:(UIViewController *)childVC title:(NSString *)title image:(NSString *)imageName selectedImage:(NSString *)selectedImageName {
     
     YTNavigationController *nav = [[YTNavigationController alloc]initWithRootViewController:childVC];
-
+//    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:childVC];
+    
     UIImage *nomalImage = [[UIImage imageNamed:imageName]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *selectedImage = [[UIImage imageNamed:selectedImageName]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     childVC.tabBarItem = [[UITabBarItem alloc]initWithTitle:title image:nomalImage selectedImage:selectedImage];

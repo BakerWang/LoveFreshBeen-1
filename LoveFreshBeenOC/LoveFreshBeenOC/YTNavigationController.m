@@ -14,9 +14,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIBarButtonItem *back = [[UIBarButtonItem alloc]init];
-    back.title = @"返回";
-    self.navigationItem.backBarButtonItem = back;
+    
+//    UIBarButtonItem *back = [[UIBarButtonItem alloc]init];
+//    back.title = @"返回";
+//    self.navigationItem.backBarButtonItem = back;
     
     [self setUpNavBarTheme];
     
@@ -27,8 +28,7 @@
     [[UINavigationBar appearance]setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance]setBarTintColor:[UIColor colorWithRed:253/255.0 green:207/255.0 blue:11/255.0 alpha:1.0]];
-    [[UINavigationBar appearance]setBarTintColor:YTColor(253, 207, 11, 1.0)];
-    
+
 }
 
 

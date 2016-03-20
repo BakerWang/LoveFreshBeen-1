@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class AddressModel;
+
 @interface AddressCell : UITableViewCell
 
 @property (nonatomic, strong) UILabel *nameLab;
@@ -15,6 +17,8 @@
 @property (nonatomic, strong) UILabel *telePhoneLab;
 
 @property (nonatomic, strong) UILabel *addressLab;
+
+-(void)configWithModel:(AddressModel *)model;
 
 
 @end

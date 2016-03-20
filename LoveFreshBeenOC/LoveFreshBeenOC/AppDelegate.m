@@ -7,11 +7,17 @@
 //
 
 #import "AppDelegate.h"
-//#import "ViewController.h"
-#import "GuideViewController.h"
+#import "ViewController.h"
 #import "ADViewController.h"
+#import "GuideViewController.h"
+#import "YTNavigationController.h"
+
 
 @interface AppDelegate ()
+
+@property(nonatomic,strong)ADViewController *ad;
+@property(nonatomic,strong)ViewController *vc;
+
 
 @end
 
@@ -22,16 +28,15 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    
-//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
+
     GuideViewController *guide = [[GuideViewController alloc]init];
-    ADViewController *ad = [[ADViewController alloc]init];
+    self.vc = [[ViewController alloc]init];
     
     //第一次启动
     if(![[NSUserDefaults standardUserDefaults] boolForKey:@"everLaunch"]) {
         [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"everLaunch"];
         [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"firstLaunch"];
+        
     }else {
         //不是第一次启动
         [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"firstLaunch"];
@@ -44,12 +49,28 @@
         self.window.rootViewController = guide;
     }else {
         //广告界面
-        self.window.rootViewController = ad;
+        self.window.rootViewController = self.ad ;
+        [self performSelector:@selector(loadMainPage) withObject:nil afterDelay:1.f];
     }
-    
-    // Override point for customization after application launch.
+
     return YES;
 }
+
+-(ADViewController *)ad {
+    
+    if(_ad == nil) {
+        _ad = [[ADViewController alloc]init];
+    }
+    return _ad;
+}
+
+
+-(void)loadMainPage {
+    
+    self.window.rootViewController = self.vc;
+    
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
